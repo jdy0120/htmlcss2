@@ -1,0 +1,93 @@
+body{
+    margin: 0; /*body의 필요없는 마진 없애기*/
+    font-family: 'Lemonada', cursive;
+}
+
+a{ /*모든 a테크의 스타일을 설정해준다.*/
+    text-decoration: none;
+    color: white;
+}
+.navbar{
+    display: flex; /*navbar안에 있는 3개(logo,menu,icons)아이템 들이 일렬로 정렬한다.*/
+    justify-content: space-between;/*세개의 아이템들에 같은 크기의 공백을 넣는다.*/
+    align-items: center; /*아이템들을 수직으로 중간에 위치 시킨다.*/
+    background-color: blue; /*배경 색*/
+    padding: 8px 12px; /**/
+}
+
+.navbar__logo{
+    font-size: 24px;
+    color: white;
+}
+
+.navbar__logo i{ /*navbar__logo안의 i테그를 설정한다.*/
+    color: darkgoldenrod;
+}
+
+.navbar__menu{
+    display: flex;/*다섯가지 아이템(home,gallery,weddings,faq,bookings)들을 일렬로 정렬해준다.*/
+    list-style: none; /*리스트는 기본적으로 글자 앞에 점을 출력한다 이를 없애기 위한 것*/
+    padding-left: 0;
+}
+
+.navbar__menu li{
+    padding: 8px 12px; /*위아래,양옆 크기*/
+}
+
+.navbar__menu li:hover{ /*마우스가 올려지면 background색이 변한다.*/
+    background-color: antiquewhite;
+    border-radius: 4px; /*사각형의 모서리를 살짝 둥글게 깍아준다.*/
+}
+
+.navbar__icons{
+    list-style: none;/*리스트는 기본적으로 글자 앞에 점을 출력한다 이를 없애기 위한 것*/
+    color: white;
+    display: flex; /*두개의 아이콘들을 일렬로 정렬*/
+    padding-left: 0;
+}
+
+.navbar__icons li{
+    padding: 8px 12px;
+}
+
+.navbar__toogleBtn{ 
+    display: none;
+    position: absolute; /*문서의 흐름에서 나와 포지셔닝할 수 잇따.*/
+    right: 32px;
+    font-size: 24px;
+    color: antiquewhite;
+}
+
+@media screen and (max-width: 831px){ /*반응형 웹을 만들기 위해   media를 사용하고 screen타입이다. 너비가 831픽셀일때 실행된다.*/
+    .navbar {
+        flex-direction: column; /*navbar에 있는 모든 아이템들이행으로 정렬된다.*/
+        align-items: flex-start; /*왼쪽으로 정렬*/
+        padding: 8px 12px;
+    }
+    
+    .navbar__menu{
+        display: none; /*너비가 줄어들면 menu창을 없앤다.*/
+        flex-direction: column; /*menu에 있는 아이템들이 행으로 정렬된다.*/
+        align-items: center; /*가운데 정렬*/
+        width: 100%; /*메뉴의 크기를 100%로 바꿔야 align-item의 center가 보여진다.*/
+    }
+    
+    .navbar__menu li{
+        width: 100%;
+        text-align: center;
+    }
+    
+    .navbar__icons{
+        display: none; /*너비가 줄어들면 아이콘을 없앤다.*/
+        justify-content: center;
+        width: 100%;
+    }
+    .navbar__toogleBtn{
+        display: block; /*너비가 줄어들면 토글버튼도 없앤다.ㅋ*/
+    }
+    
+    .navbar__menu.active,
+    .navbar__icons.active{/*자바스크립트와 이어짐*/
+        display: flex;
+    }
+}

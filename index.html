@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Nav bar</title>
+    <link href="plugins/web-fonts-with-css/css/all.css" rel="stylesheet"> <!-- fontawesome을 불러옴 -->
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@600&display=swap" rel="stylesheet">
+    <!-- 구글 폰트패밀리를 불러옴 -->
+    <script src="main.js" defer></script>
+    <!-- 자바스크립트 main.js를 불러옴 -->
+</head>
+<body>
+   <nav class="navbar">
+    <!-- 커다란 세개의 구역을 만든다. (navbar__logo, navbar__menu,navbar__icons)-->
+       <div class="navbar__logo">
+           <i class="fab fa-accusoft"></i>
+           <a href="">DreamCoding</a> <!-- 클릭 시 홈화면으로 넘어갈 수 있다.-->
+       </div>
+       <ul class="navbar__menu">
+            <!-- (li>a)*5 tab -->
+           <li><a href="">Home</a></li>
+           <li><a href="">Gallery</a></li>
+           <li><a href="">Weddings</a></li>
+           <li><a href="">FAQ</a></li>
+           <li><a href="">Bookings</a></li>
+       </ul>
+       <ul class="navbar__icons">
+          <!-- fontawesome 복사 붙여넣기 -->
+           <li><a href=""><i class="fab fa-twitter"></i></a></li>
+           <li><a href=""><i class="fab fa-github"></i></a></li>
+       </ul>
+       
+       <a href="#" class="navbar__toogleBtn">
+           <i class="fas fa-bars"></i>
+       </a>
+       
+   </nav>
+    
+</body>
+</html>
